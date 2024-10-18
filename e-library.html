@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="e-library.css">
+    <title>E-Library</title>
+</head>
+<body>
+
+ <!-- Video background container for desktop mode -->
+ <div class="video-bg">
+    <video autoplay muted loop id="bg-video">
+        <source src="img/vinda.mp4" type="video/mp4">
+    </video>
+</div>
+
+    <div class="library-container">
+        <h1>Welcome to the KSUCU E-Library</h1>
+
+        <div class="search-filter">
+            <input type="text" id="search" placeholder="Search for books..." oninput="filterBooks()">
+            <select id="category-select" onchange="filterBooks()">
+                <option value="">Select Categories</option>
+                <option value="Alter">Alter</option>
+                <option value="Faith">Faith</option>
+                <option value="Growth">Growth</option>
+                <option value="Hope">Hope</option>
+                <option value="Leadership">Leadership</option>
+                <option value="Ministry">Ministry</option>
+                <option value="Parenting">Parenting</option>
+                <option value="Prayer">Prayer</option>
+
+            </select>
+        </div>
+
+        <div class="category-nav">
+            <div class="category" onclick="filterBooks('Alter')">Alter  ||</div>
+            <div class="category" onclick="filterBooks('Faith')">Faith  ||</div>
+            <div class="category" onclick="filterBooks('Growth')">Growth</div>||
+            <div class="category" onclick="filterBooks('Hope')">Hope</div>||
+            <div class="category" onclick="filterBooks('Leadership')">Leadership</div>||
+            <div class="category" onclick="filterBooks('Ministry')">Ministry  ||</div>
+            <div class="category" onclick="filterBooks('Parenting')">Parenting  ||</div>
+            <div class="category" onclick="filterBooks('Prayer')">Prayer</div>
+
+        </div>
+
+        <div class="books" id="books">
+            <div class="book" data-category="Alter" onclick="openBook('Altar Counselors Guide', 'pdfs/alter/Altar Counselors Guide.pdf')">Altar Counselors Guide</div>
+
+
+
+            <div class="book" data-category="Faith" onclick="openBook('The Exploits Of Faith - David Oyedepo', 'pdfs/faith/The Exploits Of Faith - David Oyedepo.pdf')">The Exploits Of Faith - David Oyedepo</div>
+
+
+            <div class="book" data-category="Growth" onclick="openBook('Altar Ego_ Becoming Who God Say You Are - Craig Groeschel', 'pdfs/growth/Altar Ego_ Becoming Who God Say You Are - Craig Groeschel.pdf')">Altar Ego_ Becoming Who God Say You Are - Craig Groeschel</div>
+            <div class="book" data-category="Growth" onclick="openBook('Breaking The Curses Of Life - Dr. David O. Oyedepo', 'pdfs/growth/Breaking The Curses Of Life - Dr. David O. Oyedepo.pdf')">Breaking The Curses Of Life - Dr. David O. Oyedepo</div>
+            <div class="book" data-category="Growth" onclick="openBook('Church Growth - Dag Heward-Mills', 'pdfs/growth/Church Growth - Dag Heward-Mills.pdf')">Church Growth - Dag Heward-Mills</div>
+            <div class="book" data-category="Growth" onclick="openBook('Have_a_New_Teenager_by_Friday_From', 'pdfs/growth/Have_a_New_Teenager_by_Friday_From.pdf')">Have_a_New_Teenager_by_Friday_From</div>
+            <div class="book" data-category="Growth" onclick="openBook('The Life And Diary Of David Bra - David Brainerd', 'pdfs/growth/The Life And Diary Of David Bra - David Brainerd.pdf')">The Life And Diary Of David Bra - David Brainerd</div>
+            <div class="book" data-category="Growth" onclick="openBook('The Normal Christian Life - Watchman Nee', 'pdfs/growth/The Normal Christian Life - Watchman Nee.pdf')">The Normal Christian Life - Watchman Nee</div>
+
+
+
+            <div class="book" data-category="Hope" onclick="openBook('The_Strong-willed_Child_James Dobson', 'pdfs/hope/The_Strong-willed_Child_James Dobson.pdf')">The_Strong-willed_Child_James Dobson</div>
+            <div class="book" data-category="Hope" onclick="openBook('Wisdom Diary On Prosperity - David Oyedepo', 'pdfs/hope/Wisdom Diary On Prosperity - David Oyedepo.pdf')">Wisdom Diary On Prosperity - David Oyedepo</div>   <div class="book" data-category="Hope" onclick="openBook('You Shall Not Be Barren - David Oyedepo', 'pdfs/hope/You Shall Not Be Barren - David Oyedepo.pdf')">You Shall Not Be Barren - David Oyedepo</div>
+
+
+            <div class="book" data-category="Leadership" onclick="openBook('7-Principles-of-Transformational-Leadership.', 'pdfs/leadership/7-Principles-of-Transformational-Leadership.pdf')">7-Principles-of-Transformational-Leadership.</div>
+            <div class="book" data-category="Leadership" onclick="openBook('leadership', 'pdfs/leadership/55627312.pdf')">Leadership</div>
+            <div class="book" data-category="Leadership" onclick="openBook('Power of Character in Leadership - Myles Munroe.', 'pdfs/leadership/Power of Character in Leadership - Myles Munroe.pdf')">Power of Character in Leadership - Myles Munroe.</div>
+            <div class="book" data-category="Leadership" onclick="openBook('The-Power-Of-Character-In-Leadership-Myles-Munroe-Christiandiet.com_.ng_.', 'pdfs/leadership/The-Power-Of-Character-In-Leadership-Myles-Munroe-Christiandiet.com_.ng_.pdf')">The-Power-Of-Character-In-Leadership-Myles-Munroe-Christiandiet.com_.ng_.</div>
+            <div class="book" data-category="Leadership" onclick="openBook('Transformational Leadership VS. Transactional Leadership', 'pdfs/leadership/Transformational Leadership VS. Transactional Leadership ( PDFDrive ).pdf')">Transformational Leadership VS. Transactional Leadership</div>
+
+
+            <div class="book" data-category="Ministry" onclick="openBook('Purposes of Pentecost - Derek Prince.', 'pdfs/ministry/Purposes of Pentecost - Derek Prince.pdf')">Purposes of Pentecost - Derek Prince.</div>
+            <div class="book" data-category="Ministry" onclick="openBook('Transform Your Pastoral Ministry - Dag Heward-Mills.', 'pdfs/ministry/Transform Your Pastoral Ministry - Dag Heward-Mills.pdf')">Transform Your Pastoral Ministry - Dag Heward-Mills.</div>
+            <div class="book" data-category="Ministry" onclick="openBook('Transformational Leadership VS. Transactional Leadership', 'pdfs/ministry/Transformational Leadership VS. Transactional Leadership ( PDFDrive ).pdf')">Transformational Leadership VS. Transactional Leadership</div>
+
+
+
+            <div class="book" data-category="Parenting" onclick="openBook('Parenting', 'pdfs/parenting/978-1-4143-9135-9.pdf')">Parenting</div>
+            <div class="book" data-category="Parenting" onclick="openBook('Attitude is Everything by Keith Harrell', 'pdfs/parenting/Attitude is Everything by Keith Harrell ( PDFDrive ).pdf')">Attitude is Everything by Keith Harrell</div>
+
+            <div class="book" data-category="Prayer" onclick="openBook('Glory Of God - Guillermo Maldonado', 'pdfs/prayer/Glory Of God - Guillermo Maldonado.pdf')">Glory Of God - Guillermo Maldonado</div>
+            <div class="book" data-category="Prayer" onclick="openBook('Kenneth E Hagin - The Art of Prayer.', 'pdfs/prayer/Kenneth E Hagin - The Art of Prayer.pdf')">Kenneth E Hagin - The Art of Prayer.</div> 
+            <div class="book" data-category="Prayer" onclick="openBook('Relying on the Holy Spirit', 'pdfs/prayer/Relying on the Holy Spirit (Lif - Charles Stanley.pdf')">Relying on the Holy Spirit</div> 
+            <div class="book" data-category="Prayer" onclick="openBook('The Glory of God - Kenneth E. Hagin.', 'pdfs/prayer/The Glory of God - Kenneth E. Hagin.pdf')">The Glory of God - Kenneth E. Hagin.</div> 
+            <div class="book" data-category="Prayer" onclick="openBook('The Name of Jesus - Kenneth E. Hagin.', 'pdfs/prayer/The Name of Jesus - Kenneth E. Hagin.pdf')">The Name of Jesus - Kenneth E. Hagin.</div>
+             <div class="book" data-category="Prayer" onclick="openBook('Understanding The Purpose And Power of Prayer - Myles Munroe.', 'pdfs/prayer/Understanding The Purpose And Power of Prayer - Myles Munroe.pdf')">Understanding The Purpose And Power of Prayer - Myles Munroe.</div>
+
+        </div>
+    </div>
+
+    <div class="modal" id="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal()">&times;</span>
+            <h2 id="book-title"></h2>
+            <iframe id="pdf-viewer" width="100%" height="600px"></iframe>
+        </div>
+    </div>
+
+    <script src="e-library.js"></script>
+</body>
+</html>
